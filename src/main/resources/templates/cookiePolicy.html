@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="../static/bootstrap/css/custom.css" th:href="@{/bootstrap/css/custom.css}" />
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<br/>
+<div class="text-center">
+<h1>Cookies</h1>
+    <br/>
+</div>
+<div class="text-center">
+    <div class="container">
+<p align="justify">A cookie is a tiny file that is stored on a user's computer and issued to your computer when you enter a website. It stores a small amount of information relating specifically to the client accessing the website. The cookie can be accessed by both the web server and the user's computer.</p>
+<p align="justify">Cookies are used for a wide range of purposes, such as identifying your computer's previous visits to a website, ascertaining the most popular features of a website or enable a company to present specific information to users.</p>
+    <p align="justify">Instead of expiring when the web browser is closed as session cookies do, a persistent cookie expires at a specific date or after a specific length of time. This means that, for the cookie's entire lifespan (which can be as long or as short as its creators want), its information will be transmitted to the server every time the user visits the website that it belongs to, or every time the user views a resource belonging to that website from another website (such as an advertisement).</p>
+    <p align="justify"><p align="justify">Instead of expiring when the web browser is closed as session cookies do, a persistent cookie expires at a specifi</p>
+    <p align="justify">Normally, a cookie's domain attribute will match the domain that is shown in the web browser's address bar. This is called a first-party cookie. A third-party cookie, however, belongs to a domain different from the one shown in the address bar. This sort of cookie typically appears when web pages feature content from external websites, such as banner advertisements. This opens up the potential for tracking the user's browsing history, and is often used by advertisers in an effort to serve relevant advertisements to each user.
+
+        As an example, suppose a user visits www.example.org. This web site contains an advertisement from ad.foxytracking.com, which, when downloaded, sets a cookie belonging to the advertisement's domain (ad.foxytracking.com). Then, the user visits another website, www.foo.com, which also contains an advertisement from ad.foxytracking.com, and which also sets a cookie belonging to that domain (ad.foxytracking.com). Eventually, both of these cookies will be sent to the advertiser when loading their advertisements or visiting their website. The advertiser can then use these cookies to build up a browsing history of the user across all the websites that have ads from this advertiser.</p>
+</div>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

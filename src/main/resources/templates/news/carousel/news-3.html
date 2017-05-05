@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<br/>
+<div class="text-center">
+    <p class="h1">Mclaren MP4-12C (2011)</p>
+    <br/>
+    <img  src="http://zombdrive.com/images/2013-mclaren-mp4-12c-4.jpg" style="height: 896px; height: 504px;">
+</div>
+<div class="text-center">
+    <br/>
+    <div class="container">
+        <br/>
+        <p align="justify">The McLaren MP4-12C, later known simply as the McLaren 12C,[3] is a sports car designed and manufactured by McLaren Automotive. It is the first production car wholly designed and built by McLaren since the McLaren F1, which ended production in 1998. The car's final design was unveiled in September 2009, and was launched in mid-2011.</p>
+        <p align="justify">The MP4-12C features a carbon fibre composite chassis, and is powered by a mid-mounted McLaren M838T 3.8-litre V8, twin-turbo engine developing approximately 592 hp (441 kW; 600 PS) and around 443 lb·ft (601 N·m) of torque. The car makes use of Formula 1-sourced technologies such as "brake steer", where the inside rear wheel is braked during fast cornering to reduce understeer. Power is transmitted to the wheels through a seven-speed seamless shift dual-clutch gearbox.</p>
+        <p align="justify">A convertible version of the car called the MP4-12C Spider, renamed the 12C Spider in 2012, is also available. In February 2014, McLaren announced the related 650S, with revised bodywork, upgraded engine and other technical improvements. In April 2014, McLaren announced the end of production of the 12C.</p>
+    </div>
+</div>
+</body>
+<br/>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

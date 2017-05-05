@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<br/>
+<br/>
+<main class="col-4 offset-4 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h2>Connected to Facebook</h2></div>
+                <img src="http://centerlyne.com/wp-content/uploads/2016/07/logo-facebook.png" width="192" height="192">
+                <br/>
+                <a class="btn btn-primary btn-lg" value="Proceed with Facebook" href="/facebook">Proceed with Facebook</a>
+            </div>
+        </div>
+    </div>
+</main>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

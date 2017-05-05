@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="../static/bootstrap/css/custom.css" th:href="@{/bootstrap/css/custom.css}" />
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<br/>
+<div class="text-center">
+    <p class="h1">Porsche GT3 RS (2018)</p>
+    <br/>
+<img  src="http://special.porsche.com/microsite/911-gt3-rs/assets/images/share/02.jpg" style="height: 896px; height: 504px;">
+</div>
+<div class="text-center">
+<br/>
+<div class="container">
+    <br/>
+<p align="justify">Flaunting a huge rear wing, giant air intakes, and fender-filling wheels and tires, there’s no mistaking the 911 GT3 for anything but the track-ready racer it is. This image continues inside, where black leather seating and GT3 logos abound. Its 500-hp 4.0-liter flat-six that howls to a 9000-rpm redline; the rear wheels are driven through a seven-speed dual-clutch automatic or an optional six-speed manual. The more discreet 911 R loses the rear wing and offers the six-speed manual as standard.</p>
+</div>
+</div>
+</body>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

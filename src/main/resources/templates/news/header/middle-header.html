@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="../static/bootstrap/css/custom.css" th:href="@{/bootstrap/css/custom.css}" />
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<br/>
+<div class="text-center">
+    <p class="h1">Lamborghini Huracan (2014)</p>
+    <br/>
+    <img  src="https://www.lamborghini.com/en-en/sites/en-en/files/DAM/lamborghini/share%20img/huracan-coupe-facebook-og.jpg" style="height: 896px; height: 504px;">
+</div>
+<div class="text-center">
+    <br/>
+    <div class="container">
+        <br/>
+        <p align="justify">Flaunting a huge rear wing, giant air intakes, and fender-filling wheels and tires, there’s no mistaking the 911 GT3 for anything but the track-ready racer it is. This image continues inside, where black leather seating and GT3 logos abound. Its 500-hp 4.0-liter flat-six that howls to a 9000-rpm redline; the rear wheels are driven through a seven-speed dual-clutch automatic or an optional six-speed manual. The more discreet 911 R loses the rear wing and offers the six-speed manual as standard.</p>
+        <p align="justify">The Huracán's name (huracán being the Spanish word for hurricane) is inspired by a Spanish fighting bull. The use of names from historical Spanish fighting bulls have been the traditional naming scheme of most Lamborghini car models. Huracán was a bull known for its courage that fought in 1879.[4] Also Huracan is the Mayan god of wind, storm and fire.[5]</p>
+        <p align="justify">Changes from Gallardo included full LED illumination, a 12.3 inch full-colour TFT instrument panel, Fine Nappa leather and Alcantara interior upholstery, redesigned dashboard and central tunnel, Iniezione Diretta Stratificata (IDS, essentially an adapted version of parent Audi's Fuel Stratified Injection) direct and indirect gasoline injections, engine Stop & Start technology, EU6 emissions regulation compliance, Lamborghini Doppia Frizione (LDF) 7-speed dual-clutch transmission with 3 modes (STRADA, SPORT and CORSA), 20 inch wheels, carbon-ceramic brake system, optional Lamborghini Dynamic Steering variable steering system and MagneRide electromagnetic damper control.[6]</p>
+        <p align="justify">The price of the Huracán with extra options added reaches to over US$320,000, or £200,000. The base price for the Huracán in the United States is US$241,945, and around £180,720 in the UK.[12] Extra options that increase the price of the car include interior enhancements, special paint schemes, improved suspension, and a lifting system, as well as multiple components optionally available in carbon fiber, rather than aluminium.[13] [14] Taiwan models went on sale for NT$15,080,000.[15]</p>
+    </div>
+</div>
+</body>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="../static/bootstrap/css/custom.css" th:href="@{/bootstrap/css/custom.css}" />
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<br/>
+<div class="text-center">
+    <p class="h1">Bugatti Veyron (2005)</p>
+    <br/>
+    <img  src="http://rekordiori.com/wp-content/uploads/2011/09/678_9.jpg" style="height: 896px; height: 504px;">
+</div>
+<div class="text-center">
+    <br/>
+    <div class="container">
+        <br/>
+        <p align="justify">The Bugatti Veyron EB 16.4 is a mid-engined sports car, designed and developed in Germany by the Volkswagen Group and manufactured in Molsheim, France, by Bugatti Automobiles S.A.S., named after the racing driver Pierre Veyron.
+
+            The original version has a top speed of 407 km/h (253 mph).[4][5] It was named Car of the Decade and best car award (2000–2009) by the BBC television programme Top Gear. The standard Bugatti Veyron also won Top Gear's Best Car Driven All Year award in 2005.</p>
+        <p align="justify">The Super Sport version of the Veyron is recognised by Guinness World Records as the fastest street-legal production car in the world, with a top speed of 431.072 km/h (268 mph),[6] and the roadster Veyron Grand Sport Vitesse version is the fastest roadster in the world, reaching an averaged top speed of 408.84 km/h (254.04 mph) in a test on 6 April 2013.[7][8]
+
+            The Veyron's chief designer was Hartmut Warkuss and the exterior was designed by Jozef Kabaň of Volkswagen, with much of the engineering work being conducted under the guidance of engineering chief Wolfgang Schreiber.</p>
+        <p align="justify">Several special variants have been produced. In December 2010, Bugatti began offering prospective buyers the ability to customise exterior and interior colours by using the Veyron 16.4 Configurator application on the marque's official website. The Bugatti Veyron was discontinued in late 2014.[9][10]</p>
+        <p align="justify">The price of the Huracán with extra options added reaches to over US$320,000, or £200,000. The base price for the Huracán in the United States is US$241,945, and around £180,720 in the UK.[12] Extra options that increase the price of the car include interior enhancements, special paint schemes, improved suspension, and a lifting system, as well as multiple components optionally available in carbon fiber, rather than aluminium.[13] [14] Taiwan models went on sale for NT$15,080,000.[15]</p>
+    </div>
+</div>
+</body>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<!--    <link rel="stylesheet" href="../static/bootstrap/css/custom.css" th:href="@{/bootstrap/css/custom.css}" />-->
+</head>
+    <body>
+    <header>
+        <nav th:replace="fragments/menu::menu"></nav>
+    </header>
+    <br/>
+    <div class="text-center">
+    <a href="/cars/add" class="btn btn-outline-success btn-lg"><strong>+</strong> New Ad</a>
+        <a href="/cars/table" class="btn btn-outline-primary btn-lg">Table View</a>
+    </div>
+    <br/>
+        <div class="card-columns">
+                <div class="card" style="width: 440px;" th:each="car : ${cars}">
+                    <a th:href="@{/cars/details/{id}(id=${car.id})}">
+                    <img class="mx-auto img-thumbnail"
+                         th:src="${car.imgUrl}" style="width: 435px; height: 280px"></a>
+                    <div class="card-block">
+                        <h4 class="card-title" th:text="${car.name}"></h4>
+                        <p class="card-text" th:text="${car.model}"></p>
+                        <p class="card-text" align="right" th:text="|${car.travelledDistance} km|"></p>
+                        <p class="card-text" align="right" th:text="|${car.price} лв.|"></p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="card-button btn btn-outline-primary" name="info" th:href="@{/cars/details/{id}(id=${car.id})}">Details</a>
+                        <span sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a class="card-button btn btn-outline-warning" name="warning" th:href="@{/cars/edit/{id}(id=${car.id})}">Edit</a>
+                        </span>
+                        <span sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a class="card-button btn btn-outline-danger" name="danger" th:href="@{/cars/delete/{id}(id=${car.id})}">Delete</a>
+                        </span>
+                    </div>
+                </div>
+        </div>
+    <footer th:replace="fragments/footer::footer"></footer>
+    <script th:src="@{/jquery/jquery.min.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>

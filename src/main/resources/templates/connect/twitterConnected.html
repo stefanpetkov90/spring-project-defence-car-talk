@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<br/>
+<br/>
+<main class="col-4 offset-4 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h1>Connected to Twitter</h1></div>
+                <br/>
+                <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png">
+<a class="btn btn-info btn-lg" value="Proceed with Twitter" href="/twitter">Proceed with Twitter</a>
+            </div>
+</div>
+    </div>
+</main>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

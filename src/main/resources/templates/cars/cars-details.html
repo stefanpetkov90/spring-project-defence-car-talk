@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<main>
+    <br/>
+    <div class="text-center" th:object="${car}">
+    <h1 th:text="*{name}"></h1>
+    </div>
+    <div class="card-group">
+        <div class="card" style="width: 440px;" th:object="${car}">
+            <img class="mx-auto img-thumbnail"
+                 th:src="${car.imgUrl}" style="width: 640px;" height="360px">
+        </div>
+    </div>
+    <table class="table" th:object="${car}">
+        <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Distance</th>
+            <th>Price</th>
+            <th>Engine</th>
+            <th>Color</th>
+            <th>Contact Information</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="*{name}"></td>
+            <td th:text="*{model}"></td>
+            <td th:text="|*{travelledDistance} km|"></td>
+            <td th:text="|*{price} лв.|"></td>
+            <td th:text="*{engineType}"></td>
+            <td th:text="*{color}"></td>
+            <td th:text="*{sellerPhone}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<br/>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
+
+<!--
+<div class="card-group">
+    <div class="card" th:object="${car}">
+        <img class="mx-auto img-thumbnail"
+             th:src="${car.imgUrl}" style="width: 640px;" height="360px">
+        <div class="card-block">
+            <h4 class="card-title" th:text="|Car make: *{name}|"></h4>
+            <p class="card-text" th:text="|Car model: *{model}|"></p>
+        </div>
+    </div>
+</div>-->

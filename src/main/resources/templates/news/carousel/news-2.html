@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<br/>
+<div class="text-center">
+    <p class="h1">Ferrari 458 Speciale (2014)</p>
+    <br/>
+    <img  src="http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/750x422/quality/95/http://www.blogcdn.com/slideshows/images/slides/263/606/9/S2636069/slug/l/001-2015-ferrari-458-special-review-1.jpg" style="height: 896px; height: 504px;">
+</div>
+<div class="text-center">
+    <br/>
+    <div class="container">
+        <br/>
+        <p align="justify">The 458 Speciale is the top performing 458 Italia. Distinctions of the Speciale are the forged wheels, vented bonnet, finned side sills, taller rear spoiler and redesigned bumpers, which include active aerodynamics designed by Ferrari Styling Centre in cooperation with Pininfarina; front and rear movable flaps balance downforce and cut drag at speed. The engine was revised, with power increased to 445 kW (597 hp) at 9,000 rpm, 540 N·m (398 lb·ft) of torque at 6,000 rpm.</p>
+    </div>
+</div>
+</body>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

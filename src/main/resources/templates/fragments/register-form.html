@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="col-4 offset-4 text-center" th:fragment = "register-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h1 class="display-3">Register</h1></div>
+                <br/>
+                <div th:if="${error} != null" th:text = "${error}" style="color: red"></div>
+                <form method="post" th:object="${registrationModel}">
+                    <div class="form-group" th:classappend="${#fields.hasErrors('username')}? 'has-danger'">
+                        <label class="sr-only">Username</label>
+                        <input name="username" type="text" class="form-control form-control-danger" placeholder="Username" id="inputUsername" th:field = "*{username}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('username')}" th:text="${error}">Sorry, that username's taken. Try another?</div>
+                    </div>
+<!--                    <div class="form-group row">
+                        <label class="sr-only">Email</label>
+                        <input name="email" type="text" class="form-control" placeholder="somebody@example.com"/>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="sr-only">Full Name</label>
+                        <input name="fullName" type="text" class="form-control" placeholder="Full Name"/>
+                    </div>-->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-danger'">
+                        <label class="sr-only">Password</label>
+                        <input name="passowrd" type="password" class="form-control form-control-danger" placeholder="Password" id="inputPassword" th:field = "*{password}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('password')}" th:text="${error}">Password Invalid</div>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('global')} ? 'has-danger'">
+                        <label class="sr-only">Confirm Password</label>
+                        <input name="confirmedPassword" type="password" class="form-control form-control-danger" placeholder="Confirm Password" id="inputCofirmedPassword" th:field = "*{confirmedPassword}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('global')}" th:text="${error}">Password Invalid</div>
+                    </div>
+                    <input type="submit" class="btn btn-success btn-lg btn-block" value="Register"/>
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

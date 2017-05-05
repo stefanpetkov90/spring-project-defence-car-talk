@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="../static/bootstrap/css/table.css" th:href="@{/bootstrap/css/table.css}" />
+    <script th:src="@{/jquery/jquery.min.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/bootstrap/js/scripts.js}"></script>
+</head>
+<header>
+    <nav th:replace="fragments/menu::menu"></nav>
+</header>
+<body>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Make..">
+
+<table id="myTable">
+    <tr class="header">
+        <th>Make</th>
+        <th>Model</th>
+        <th>Distance</th>
+        <th>Price</th>
+        <th>Engine</th>
+        <th>Color</th>
+        <th>Contact Information</th>
+        <th>ID</th>
+    </tr>
+    <tr th:each="car : ${carsTable}">
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="|${car.travelledDistance} km|"></td>
+        <td th:text="|${car.price} лв.|"></td>
+        <td th:text="${car.engineType}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.sellerPhone}"></td>
+        <td th:text="${car.id}"></td>
+    </tr>
+</table>
+</body>
+</html>

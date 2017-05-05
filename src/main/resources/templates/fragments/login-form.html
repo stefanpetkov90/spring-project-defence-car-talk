@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="col-4 offset-4 text-center" th:fragment = "login">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h1 class="display-3">Login</h1></div>
+                <br/>
+                <div th:if="${error} != null" th:text = "${error}" style="color: red"></div>
+                <form method="post">
+                    <div class="form-group row">
+                        <label class="sr-only">Username</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username"/>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sr-only">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password"/>
+                    </div>
+                    <div class="form-check">
+                        <div>
+                        <label class="form-check-label">
+                            <input name="rememberMe" type="checkbox" class="form-check-input">
+                            Remember Me
+                        </label>
+                    </div>
+                    </div>
+                    <input type="submit" class="btn btn-outline-warning btn-lg btn-block"
+                           value="Login"/>
+                </form>
+                <br/>
+                <form action="/connect/facebook" method="post">
+                    <input type="hidden" name="scope" value="public_profile, email" />
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Facebook">
+                </form>
+                <br/>
+                <form action="/connect/twitter" method="post">
+                    <input type="submit" class="btn btn-info btn-lg btn-block" value="Twitter">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

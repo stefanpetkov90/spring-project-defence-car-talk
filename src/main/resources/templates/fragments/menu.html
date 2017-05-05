@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-primary" th:fragment = "menu">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="http://mediad.publicbroadcasting.net/p/wpsu/files/styles/medium/public/201403/car_talk.gif" width="100" height="auto" class="img-thumbnail">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" style= "color: white" href= "/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" style= "color: white" th:href="@{/cars/all}">Cars<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style= "color: white" href="/register" sec:authorize="isAnonymous()">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style= "color: white" href="/login" sec:authorize="isAnonymous()">Log In</a>
+                </li>
+                <li class="nav-item active">
+                    <span sec:authorize="hasRole('ROLE_ADMIN')">
+                    <a class="nav-link" style= "color: white" href="/users">Users<span class="sr-only"></span></a>
+                    </span>
+                </li>
+            </ul>
+
+            <div class="btn-group" id="myButton" sec:authorize="isAuthenticated()">
+                <button type="button" class="btn btn-success" sec:authentication="name">Action</button>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/logout" sec:authorize="isAuthenticated()">Log Out</a>
+                </div>
+            </div>
+            &nbsp;
+            &nbsp;
+        </div>
+    </nav>
+</header>
+<main>
+<div class="container-fluid" th:fragment = "content">
+    <div sec:authentication="name"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="jumbotron">
+                <h2>
+                    Hello, world!
+                </h2>
+                <p>
+                    This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron">
+                <h2>
+                    Hello, world!
+                </h2>
+                <p>
+                    This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron">
+                <h2>
+                    Hello, world!
+                </h2>
+                <p>
+                    This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>
+
+    <!--
+    <form class="form-inline my-2 my-lg-0">
+        <div class="search">
+            <input class="form-control mr-sm-2" type="text" maxlength="64" placeholder="Search">
+            <button type="submit" class="btn btn-primary btn-sm">Search</button>
+        </div>
+    </form>-->

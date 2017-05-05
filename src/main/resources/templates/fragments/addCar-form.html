@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+</head>
+<body>
+<main class="col-4 offset-4 text-center" th:fragment = "add">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h1 class="display-3">Add Car</h1></div>
+                <br/>
+                <form th:method="post" th:object="${addCarAdvertModel}">
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('name')}? 'has-danger'">
+                        <label class="form-control-label">Make</label>
+                        <input name="name" type="text" class="form-control" th:field="*{name}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('name')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('model')}? 'has-danger'">
+                        <label class="form-control-label">Model</label>
+                        <input name="model" type="text" class="form-control" th:field="*{model}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('model')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('price')}? 'has-danger'">
+                        <label class="form-control-label">Price</label>
+                        <input name ="price" type="number" class="form-control"th:field="*{price}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('price')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('imgUrl')}? 'has-danger'">
+                        <label class="form-control-label">Image</label>
+                        <input name="imgUrl" type="text" class="form-control" th:field="*{imgUrl}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('imgUrl')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('travelledDistance')}? 'has-danger'">
+                        <label class="form-control-label">Distance</label>
+                        <input name ="travelledDistance" type="number" placeholder="in km" class="form-control"th:field="*{travelledDistance}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('travelledDistance')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleSelect1">Engine Type</label>
+                        <select name="engineType" class="form-control" id="exampleSelect1">
+                            <option>Petrol</option>
+                            <option>Diesel</option>
+                            <option>Electric</option>
+                            <option>Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('color')}? 'has-danger'">
+                        <label class="form-control-label">Color</label>
+                        <input name="color" type="text" class="form-control" th:field="*{color}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('color')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('sellerPhone')}? 'has-danger'">
+                        <label class="form-control-label">Seller Phone</label>
+                        <input name="sellerPhone" type="text" class="form-control" th:field="*{sellerPhone}">
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('sellerPhone')}" th:text="${error}"></div>
+                    </div>
+                    <input type="submit" class="btn btn-outline-warning btn-lg btn-block"
+                           th:value="Add">
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

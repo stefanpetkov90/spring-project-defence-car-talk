@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<main class="col-4 offset-4 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center"><h1 class="display-3">Edit</h1></div>
+                <br/>
+                <form th:method="post" th:object="${editUserRoleModel}">
+                    <div class="form-group row">
+                        <label class="form-control-label">Name</label>
+                        <input type="text" class="form-control" th:field="*{username}" th:value="*{username}" readonly/>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-label">Password</label>
+                        <input name="password" type="text" class="form-control" th:field="*{password}" th:value="*{password}" readonly/>
+                    </div>
+                    <div class="form-group row" th:classappend="${#fields.hasErrors('authorities')}? 'has-danger'">
+                        <label class="form-control-label">Role</label>
+                        <select type="text" class="form-control" th:field="*{authorities}" th:value="*{authorities}"/>
+                        <option>Please Choose...</option>
+                        <option th:value="1">User</option>
+                        <option th:value="2">Admin</option>
+                        </select>
+                        <div class="form-control-feedback" th:each="error : ${#fields.errors('authorities')}" th:text="${error}"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-label">Account Not Locked</label>
+                        <select type="text" class="form-control" th:field="*{accountNonLocked}" th:value="*{accountNonLocked}"/>
+                        <option th:text="*{accountNonLocked}"></option>
+                        <option th:value="true">Unlocked</option>
+                        <option th:value="false">Locked</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-label">Account Not Expired</label>
+                        <select type="text" class="form-control" th:field="*{accountNonExpired}" th:value="*{accountNonExpired}"/>
+                        <option th:text="*{accountNonExpired}"></option>
+                        <option th:value="true">Not Expired</option>
+                        <option th:value="false">Expired</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-label">Credentials Not Expired</label>
+                        <select type="text" class="form-control" th:field="*{credentialsNonExpired}" th:value="*{credentialsNonExpired}"/>
+                        <option th:text="*{credentialsNonExpired}"></option>
+                        <option th:value="true">Not Expired</option>
+                        <option th:value="false">Expired</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-label">Account Enabled</label>
+                        <select type="text" class="form-control" th:field="*{enabled}" th:value="*{enabled}"/>
+                        <option th:text="*{enabled}"></option>
+                        <option th:value="true">Enable</option>
+                        <option th:value="false">Disable</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-label">Social Provider</label>
+                        <input type="text" class="form-control" th:field="*{provider}" th:value="*{provider}" readonly/>
+                    </div>
+                    <input type="submit" class="btn btn-outline-warning btn-lg btn-block"
+                           th:value="Edit"/>
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="fragments/footer::footer"></footer>
+<script th:src="@{/jquery/jquery.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
+
